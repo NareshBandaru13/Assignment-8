@@ -1,0 +1,73 @@
+\documentclass{beamer}
+\usetheme{CambridgeUS}
+
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+
+\def\inputGnumericTable{}
+
+\usepackage[latin1]{inputenc}                                 
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}
+\usepackage{caption}
+
+\title{AI1110 \\ Assignment 8}
+\author{Bandaru Naresh Kumar \\ AI21BTECH11006}
+\date{}
+\begin{document}
+	% The title page
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	% The table of contents
+	\begin{frame}{Outline}
+    		\tableofcontents
+	\end{frame}
+	
+	% The question
+	\section{Question}
+	\begin{frame}{Exercise 9.34}
+       Show that the power spectrum of an SSS process X(t) equals\\
+       $ S(\omega) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}x_1x_2G(x_1,x_2;\omega)\,dx_1\,dx_2 $ 
+	\end{frame}
+	
+	% The solution
+	\section{Solution}
+	\begin{frame}{Solution}
+	    We have,\\
+	    \begin{align}
+	    G(x_1,x_2;\omega) = \int_{-\infty}^{\infty}f(x_1,x_2;\tau)e^{-j\omega\tau}\,d\tau
+	    \end{align}
+	    Also,
+	  \begin{align}
+	  R(\tau) &= E\{X(t+\tau)X(t)\}\\
+	          &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}x_1x_2f(x_1,x_2;\tau)\,dx_1\,dx_2
+	  \end{align}
+	 \end{frame}
+	 
+	 % The final answer
+	\section{Answer}
+	\begin{frame}{Answer}
+	   Hence,\\
+	   \begin{align}
+	   S(\omega) &= \int_{-\infty}^{\infty}R(\tau)e^{-j\omega\tau}\,d\tau\\
+	             &= \int_{-\infty}^{\infty}e^{-j\omega\tau}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}x_1x_2f(x_1,x_2;\tau)\,dx_1\,dx_2\,d\tau\\
+	             &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}x_1x_2\int_{-\infty}^{\infty}e^{-j\omega\tau}f(x_1,x_2;\tau)\,d\tau\,dx_1\,dx_2\\
+	             &= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}x_1x_2G(x_1,x_2;\omega)\,dx_1\,dx_2
+	   \end{align}
+	   
+	\end{frame}
+	
+\end{document}
